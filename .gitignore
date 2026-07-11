@@ -1,3 +1,9 @@
+loom-lecture-cn/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
 # 图片文件不上传
 *.png
 *.jpg
