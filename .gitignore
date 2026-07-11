@@ -4,3 +4,12 @@ loom-lecture-cn/
 *.out
 *.toc
 *.synctex.gz
+# 图片文件不上传
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.webp
+*.ico
