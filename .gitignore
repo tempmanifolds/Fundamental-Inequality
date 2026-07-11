@@ -1,0 +1,6 @@
+loom-lecture-cn/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
