@@ -375,8 +375,8 @@
     \vspace{0.25em}
     {\strandfont\small\color{selvage}#4\par}
     \vspace{1.1cm}
-    {\labelfont\footnotesize\color{selvage}%
-      以\textcolor{indigo}{靛蓝}、\textcolor{madder}{茜红}与\textcolor{weld}{木樨草黄}染就，铁胆墨勾线\quad 织于 \textsc{loom}\par}
+    {\labelfont\small\color{selvage}%
+      \textcolor{madder}{不等号}的尽头，是\textcolor{indigo}{等号}\par}
   \end{titlepage}%
   \loomrail}
 

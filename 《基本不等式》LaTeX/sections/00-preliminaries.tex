@@ -44,7 +44,7 @@ a-b>0 \iff a>b,\qquad a-b=0 \iff a=b,\qquad a-b<0 \iff a<b.
 
 \block{0.3 圆周角定理与射影定理}
 
-以下两条定理在板块二与拓展 A 中直接使用，证明要点附后。
+以下两条定理在板块二与拓展 A 中直接使用。
 
 \begin{proposition}[圆周角定理（直径情形）]
 设 $AB$ 是圆 $O$ 的直径，$D$ 为圆上异于 $A$、$B$ 的点，则 $\angle ADB=90^\circ$。
@@ -62,8 +62,47 @@ h^2=pq.
 \]
 \end{proposition}
 
-\begin{proof}[证明要点]
-高把原三角形分成两个小直角三角形，由锐角互余知两个小三角形相似，对应边成比例 $\dfrac hp=\dfrac qh$，即得 $h^2=pq$。
+\begin{center}
+\begin{tikzpicture}[scale=1.0, line cap=round]
+  % Rt 三角形：直角在 C，斜边 AB，高 CD=h，AD=p=1.5，DB=q=3，h=sqrt(4.5)
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.5,0);
+  \coordinate (D) at (1.5,0);
+  \coordinate (C) at (1.5,2.1213);
+  \draw[inkiron] (A) -- (B) -- (C) -- cycle;
+  \draw[madder, very thick] (C) -- (D) node[midway, right, madder]{\small $h$};
+  % 直角记号：垂足 D 处
+  \draw[inkiron] (1.5,0.18) -- (1.68,0.18) -- (1.68,0);
+  % 直角记号：顶点 C 处
+  \coordinate (P1) at ($(C)!0.3cm!(A)$);
+  \coordinate (P2) at ($(C)!0.3cm!(B)$);
+  \coordinate (P3) at ($(P1)+(P2)-(C)$);
+  \draw[inkiron] (P1) -- (P3) -- (P2);
+  \foreach \p/\n/\where in {A/A/below, B/B/below, D/D/below, C/C/above}{
+    \fill[inkiron] (\p) circle (1.3pt);
+    \node[\where, inkiron] at (\p) {\small $\n$};
+  }
+  \draw[weld, |-|] (0,-0.5) -- node[below, weld]{\small $p$} (1.5,-0.5);
+  \draw[weld, |-|] (1.5,-0.5) -- node[below, weld]{\small $q$} (4.5,-0.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{proof}
+如图，设 $\mathrm{Rt}\triangle ACB$ 中 $\angle ACB=90^\circ$，$CD\perp AB$ 于 $D$，$AD=p$，$DB=q$，$CD=h$。
+
+在 $\mathrm{Rt}\triangle ADC$ 中，$\angle ADC=90^\circ$，故 $\angle DAC+\angle DCA=90^\circ$；又 $\angle ACB=90^\circ$ 给出 $\angle DCA+\angle DCB=90^\circ$。两式对照，得
+\[
+\angle DAC=\angle DCB.
+\]
+于是在 $\triangle ADC$ 与 $\triangle CDB$ 中，$\angle ADC=\angle CDB=90^\circ$，$\angle DAC=\angle DCB$，由两角对应相等得
+\[
+\triangle ADC \sim \triangle CDB.
+\]
+对应边成比例（$\triangle ADC$ 的直角边 $AD$、$DC$ 分别对应 $\triangle CDB$ 的直角边 $CD$、$DB$）：
+\[
+\frac{AD}{CD}=\frac{CD}{DB},\qquad\text{即}\qquad \frac{p}{h}=\frac{h}{q},
+\]
+故 $h^2=pq$。
 \end{proof}
 
 \clearpage
