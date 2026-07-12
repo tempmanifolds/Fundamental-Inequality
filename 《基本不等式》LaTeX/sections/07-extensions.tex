@@ -1,0 +1,184 @@
+% ===========================================================================
+%  拓展阅读（选读）· 拓展 A–D
+%  可在 main.tex 注释掉本文件的 \input 整节隐藏。
+% ===========================================================================
+\section{拓展阅读（选读）}
+
+\block{拓展 A　平均数链}
+
+两个正数 $a,b$ 有四个常用的平均数：
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}l l l L@{}}
+\toprule
+\multicolumn{1}{l}{\color{indigo}名称} &
+\multicolumn{1}{l}{\color{indigo}记号} &
+\multicolumn{1}{l}{\color{indigo}表达式} &
+\multicolumn{1}{l}{\color{indigo}常见场景} \\
+\midrule
+调和平均 & $H$ & $\dfrac{2}{\frac1a+\frac1b}=\dfrac{2ab}{a+b}$ & 往返两段速度的平均速度 \\
+几何平均 & $G$ & $\sqrt{ab}$ & 连续打折、增长率 \\
+算术平均 & $A$ & $\dfrac{a+b}{2}$ & 通常所说的「平均」 \\
+平方平均 & $Q$ & $\sqrt{\dfrac{a^2+b^2}{2}}$ & 物理中的方均根 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+它们构成\keyword{平均数链}：
+\[
+H\le G\le A\le Q,\quad\text{每个等号都当且仅当 } a=b.
+\]
+
+\textbf{在一张图中同时呈现四个平均数。}（书 1.2.3）在板块二的半圆上添加几条线：直径 $BC$ 上取点 $D$，$BD=a$，$DC=b$，圆心 $O$；过 $D$ 的垂线交半圆于 $A$（板块二已证 $AD=\sqrt{ab}=G$）；取半圆弧中点 $E$（$OE\perp BC$，$OE=OA=\dfrac{a+b}2=A$）；再过 $D$ 作 $DF\perp AO$，垂足 $F$。
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, line cap=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (5,0);
+  \coordinate (O) at (2.5,0);
+  \coordinate (D) at (1.4,0);
+  \coordinate (A) at (1.4,2.2449);
+  \coordinate (E) at (2.5,2.5);
+  \coordinate (F) at (2.2870,0.4347);
+  \draw[inkiron] (B) -- (C);
+  \draw[inkiron] (C) arc (0:180:2.5);
+  \draw[selvage] (A) -- (O);
+  \draw[weld, very thick] (A) -- (F) node[pos=0.78, left, weld]{\small $H$};
+  \draw[madder, very thick] (D) -- (A) node[midway, left, madder]{\small $G$};
+  \draw[indigo, very thick] (O) -- (E) node[midway, right, indigo]{\small $A$};
+  \draw[selvage, very thick] (D) -- (E) node[pos=0.22, right, selvage]{\small $Q$};
+  \draw[inkiron, thin] (D) -- (F);
+  \foreach \p/\n/\where in {B/B/below, C/C/below, O/O/below, D/D/below, A/A/above, E/E/above, F/F/right}{
+    \fill[inkiron] (\p) circle (1.3pt);
+    \node[\where, inkiron] at (\p) {\small $\n$};
+  }
+  \draw[weld, |-|] (0,-0.55) -- node[below, weld]{\small $a$} (1.4,-0.55);
+  \draw[weld, |-|] (1.4,-0.55) -- node[below, weld]{\small $b$} (5,-0.55);
+\end{tikzpicture}
+\end{center}
+
+由于 $AD\perp BC$ 且 $DO$ 在 $BC$ 上，$\triangle ADO$ 在 $D$ 处成直角，对它用射影定理（0.3）：
+\[
+AD^2=AF\cdot AO\ \Longrightarrow\ AF=\frac{AD^2}{AO}=\frac{ab}{\frac{a+b}{2}}=\frac{2ab}{a+b}=H;
+\]
+再在 $\mathrm{Rt}\triangle DOE$（直角在 $O$）中用勾股定理：
+\[
+DE=\sqrt{OD^2+OE^2}=\sqrt{\left(\frac{b-a}{2}\right)^2+\left(\frac{a+b}{2}\right)^2}=\sqrt{\frac{a^2+b^2}{2}}=Q.
+\]
+读图，三次使用「直角三角形中斜边不小于直角边」：
+% \underbrace 在容器数学字体下会丢字形（见 latex-pitfalls），改用 array 双行标注
+\[
+\begin{array}{ccccccc}
+DE &\ \ge\ & OE=OA &\ \ge\ & AD &\ \ge\ & AF, \\[1pt]
+Q  &       & A     &       & G  &       & H
+\end{array}
+\]
+（依次在 $\mathrm{Rt}\triangle DOE$、$\mathrm{Rt}\triangle ADO$、$\mathrm{Rt}\triangle AFD$ 中。）一张图给出整条链。$D$ 移动到圆心时四条线段重合，对应 $a=b$ 时四个平均数相等。
+
+\textbf{代数复核}：中间 $G\le A$ 是基本不等式；左边 $H\le G$ 是把基本不等式用于 $\dfrac1a,\dfrac1b$ 后取倒数；右边 $A\le Q$ 两边平方后即 \starref{}。三段证明请自行补全。
+
+\textbf{应用：不等臂天平。}天平两臂长 $l_1\ne l_2$。先把 10g 砝码放左盘、药放右盘称出一份，再把砝码放右盘、药放左盘称出一份。由杠杆平衡（力 $\times$ 臂长相等）：第一份实重 $m_1=\dfrac{10\,l_1}{l_2}$，第二份 $m_2=\dfrac{10\,l_2}{l_1}$。于是 $\sqrt{m_1m_2}=10$ 为定值，而
+\[
+m_1+m_2=10\left(\frac{l_1}{l_2}+\frac{l_2}{l_1}\right)\ge 20,
+\]
+$l_1\ne l_2$ 时严格大于 20：两次称量之和总是超过 20g。两次称量的算术平均偏大，与真实质量对应的是几何平均。
+
+\textbf{推广到 $n$ 个正数}（记住形式即可）：
+\[
+\sqrt{\frac{x_1^2+\cdots+x_n^2}{n}}\ \ge\ \frac{x_1+\cdots+x_n}{n}\ \ge\ \sqrt[n]{x_1\cdots x_n}\ \ge\ \frac{n}{\frac1{x_1}+\cdots+\frac1{x_n}}.
+\]
+其中三元的「和 $\ge$ 3 倍立方根积」最常用：$p+q+r\ge 3\sqrt[3]{pqr}$（$p,q,r>0$）。示例：
+
+\textbf{例（书例 1.2-9）}　$a,b,c>0$，$abc=1$，证明 $(a+b)^3+(b+c)^3+(c+a)^3\ge 24$。
+
+先对三个立方用三元均值，再对每个括号用基本不等式：
+\[
+(a+b)^3+(b+c)^3+(c+a)^3\ge 3(a+b)(b+c)(c+a)\ge 3\cdot 2\sqrt{ab}\cdot 2\sqrt{bc}\cdot 2\sqrt{ca}=24\sqrt{(abc)^2}=24,
+\]
+当且仅当 $a=b=c=1$ 时取等。两层放缩、取等条件一致，正是板块三的方法。
+
+\block{拓展 B \starred\starred　用一个函数统一四个平均数}
+
+设 $0<a\le b$，考察
+\[
+f(x)=\frac{b-x}{x-a}=-1+\frac{b-a}{x-a}\quad(x>a).
+\]
+先确定单调性：$x$ 增大时分母 $x-a$ 增大，$\dfrac{b-a}{x-a}$ 减小，故 $f$ 在 $(a,+\infty)$ 上递减。逐一代入（均可直接验证）：
+\[
+f(A)=1,\qquad f(H)=\frac ba,\qquad f(G)=\sqrt{\frac ba},\qquad f(Q)=\frac{Q+a}{b+Q}.
+\]
+由 $\dfrac ba\ge\sqrt{\dfrac ba}\ge 1\ge\dfrac{Q+a}{b+Q}$（末项成立是因为 $Q\le b$，分子不超过分母；请自行补证 $a\le Q\le b$），且 $f$ 递减，函数值大者自变量小，即得
+\[
+H\le G\le A\le Q.
+\]
+四个平均数由一个减函数的四个函数值统一刻画。
+
+\block{拓展 C　条件最值问题的生成：齐次化的视角}
+
+平均数链上，知道一个平均数的值，其余三个的范围随之确定（「知一求三」）。例如 $\sqrt{ab}=1$（即 $ab=1$）立即给出 $\dfrac{a+b}{2}\ge 1$。许多条件最值题，都是把这个基础模型逐步变形、隐藏得到的：
+
+\textbf{第 0 步（基础型）}　$a,b>0$，$ab=1$，则 $a+b\ge 2$。
+
+\textbf{第 1 步（改写变量）}　把基础型「$uv=9$，求 $u+v$ 最小」中的变量写作 $u=a+1$、$v=2b+1$，题面变为「$(a+1)(2b+1)=9$（$a,b>0$），求 $a+2b$ 的最小值」。识别出 $u+v=a+2b+2$ 后本质未变：$(a+1)+(2b+1)\ge 2\sqrt9=6$，故 $a+2b\ge 4$（$a=2,\ b=1$ 取等）。（乘积由 1 调为 9，是为使取等点落在正数范围内。）
+
+\textbf{第 2 步（展开隐藏结构）}　把条件展开：$2ab+a+2b=8$，求 $a+2b$ 的最小值。与第 1 步是同一道题，但需要自行把 $(a+1)(2b+1)=9$ 因式分解还原。此步是解这类题的关键功夫。
+
+\textbf{第 3 步（调整系数）}　条件改为 $2ab+a+2b=2$（即 $(a+1)(2b+1)=3$），求 $2a+2b$ 的最小值。目标系数与条件不齐时配凑：两边乘 2 得 $(2a+2)(2b+1)=6$，而 $(2a+2)+(2b+1)\ge 2\sqrt6$，故 $2a+2b\ge 2\sqrt6-3$。
+
+\textbf{第 4 步（升为二次）}　条件改成二次式：$a^2+3ab+2b^2=1$，求 $5a+7b$ 的最小值。先因式分解 $a^2+3ab+2b^2=(a+b)(a+2b)$，积为定值；再拆目标 $5a+7b=3(a+b)+2(a+2b)\ge 2\sqrt{3\cdot2\cdot1}=2\sqrt6$（$a=b=\dfrac{1}{\sqrt6}$ 取等）。
+
+\textbf{这些变形共同的引擎：齐次。}每一项次数都相同的式子称为\keyword{齐次式}：$a+b$ 是 1 次，$ab$、$a^2+3ab+2b^2$ 是 2 次，$\dfrac ba+\dfrac ab$ 是 0 次。基本不等式 $a+b\ge 2\sqrt{ab}$ 两边都是 1 次——\textbf{它只比较同次的量}。由此可以解释两件事：
+\begin{itemize}
+  \item \textbf{0 次齐次式只依赖比值。}$2+\dfrac ba+\dfrac ab$ 中设 $t=\dfrac ba$，即化为 $2+t+\dfrac1t$，双变量化为单变量。这是「乘 1 展开后能继续处理」的根本原因。
+  \item \textbf{乘「1」法等于配平次数。}$\dfrac1a+\dfrac1b$ 是 $-1$ 次，乘上 1 次的 $(a+b)$ 恰为 0 次。条件（$a+b=1$、$ab=1$、$\dfrac1x+\dfrac9y=1$ 等）的作用，是提供一个可自由乘除的「1」，用来补齐目标式的次数。换元、配凑、乘 1，做的是同一件事：\keyword{把式子修成齐次，使基本不等式可用}。
+\end{itemize}
+
+书中的一道示范，分子各项次数不一也能配齐：
+
+\textbf{例（书例 1.2-8）}　正实数 $a,b$ 满足 $a+2b=2$，求 $\dfrac{1+4a+3b}{ab}$ 的最小值。
+
+分母 $ab$ 是 2 次；分子中 $1$ 是 0 次、$4a+3b$ 是 1 次，用条件逐项补齐到 2 次：$1=\left(\dfrac{a+2b}{2}\right)^2$，$4a+3b=(4a+3b)\cdot\dfrac{a+2b}{2}$。于是
+\begin{align*}
+\frac{1+4a+3b}{ab}
+  &=\frac{\left(\frac{a+2b}{2}\right)^2+(4a+3b)\cdot\frac{a+2b}{2}}{ab}
+   =\frac{9a^2+26ab+16b^2}{4ab}\\
+  &=\frac{26}{4}+\frac{9a^2+16b^2}{4ab}
+   \ge\frac{26}{4}+\frac{2\sqrt{144}\,ab}{4ab}=\frac{25}{2},
+\end{align*}
+当且仅当 $9a^2=16b^2$ 即 $3a=4b$，配合 $a+2b=2$ 得 $a=\dfrac45$，$b=\dfrac35$ 时取等。
+
+了解这条生成路径后，面对陌生的条件最值题可反向操作，先问两个问题：条件能否因式分解还原为基础型？目标与条件各是几次、相差几次？
+
+\block{拓展 D　对称性：可以用来猜，不能用来证}
+
+\textbf{轮换对称式。}把式中字母按一定顺序轮换（如 $x\to y$，$y\to x$；三元时 $x\to y\to z\to x$）后式子不变，称其为轮换对称式。（书 1.3.2）基本不等式一族的取等条件都是「各元相等」，因此面对对称的问题，很自然会猜测取等点在 $x=y$。这一猜测何时可靠？先看同一道题的三种解法：
+
+\textbf{同一题三解}　实数 $x,y$ 满足 $x^2+y^2+xy=1$，求 $x+y$ 的最大值。（书例 1.3-1）
+
+\textbf{解法一（配凑）}：$x^2+y^2+xy=(x+y)^2-xy$，而 $xy\le\left(\dfrac{x+y}{2}\right)^2$ 对一切实数成立（卡片 1 易错提醒），故
+\[
+1=(x+y)^2-xy\ \ge\ (x+y)^2-\frac{(x+y)^2}{4}=\frac34(x+y)^2,
+\]
+得 $(x+y)^2\le\dfrac43$，$x+y\le\dfrac{2\sqrt3}{3}$，等号在 $x=y=\dfrac{\sqrt3}{3}$（代回约束验证成立）。
+
+\textbf{解法二（对称猜测）}：题目关于 $x,y$ 对称，令 $x=y$：$3x^2=1$，$x+y=2x=\dfrac{2\sqrt3}{3}$。此法只算出了对称点处的值，并未排除其他点更大，\textbf{只能作为猜测}，需用解法一或解法三坐实。
+
+\textbf{解法三（判别式法）}：设 $k=x+y$，以 $x=k-y$ 代入约束得 $y^2-ky+k^2-1=0$。$y$ 为实数，方程必须有实数解，故判别式 $\Delta=k^2-4(k^2-1)\ge 0$（一元二次方程有实数解当且仅当 $\Delta=b^2-4ac\ge 0$，初三内容，此处直接使用），解得 $k^2\le\dfrac43$，结论相同。
+
+同型题：$4x^2+y^2+xy=1$ 求 $2x+y$ 的最大值——把 $2x$ 视为一个整体，三种解法均适用，答案 $\dfrac{2\sqrt{10}}{5}$。（书例 1.2-5/1.3-3）
+
+\textbf{对称猜测失效的例子。}（书例 1.3-5）$a,b>0$，$ab=1$，求 $\dfrac{1}{2a}+\dfrac{1}{2b}+\dfrac{8}{a+b}$ 的最小值。
+
+问题关于 $a,b$ 完全对称，猜 $a=b=1$，得 $\dfrac12+\dfrac12+4=5$。\textbf{这是错误答案。}正确解法：用 $ab=1$ 合并前两项，
+\[
+\frac{1}{2a}+\frac{1}{2b}=\frac{a+b}{2ab}=\frac{a+b}{2},
+\]
+设 $t=a+b\ge 2\sqrt{ab}=2$，目标化为 $\dfrac t2+\dfrac 8t\ge 2\sqrt{\dfrac t2\cdot\dfrac8t}=4$，等号要求 $t=4$，在 $t\ge 2$ 范围内可以取到（$a+b=4$ 且 $ab=1$，解得 $a=2\pm\sqrt3$）。最小值为 $4$，且取等点并不对称。
+
+失效原因：换元后 $g(t)=\dfrac t2+\dfrac8t$ 的最小值点在 $t=4$，而对称点 $a=b$ 对应的是端点 $t=2$。对称只说明「对称点是一个特殊位置」，不保证最值在该处。因此：
+
+\begin{strand}
+\keyword{齐次决定结构，对称提示取等点，证明必须由不等式本身完成。}用对称猜出取等点后，务必用配凑或判别式法验证；使用判别式法求最值时，还要验证端点能否取到、变量是否有附加限制（如 $\sqrt{y}\ge 0$ 一类隐含条件，参见书例 1.3-2）。
+\end{strand}
+
+\clearpage

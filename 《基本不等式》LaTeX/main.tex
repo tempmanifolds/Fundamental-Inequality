@@ -1,0 +1,87 @@
+% !TEX program = xelatex
+% ===========================================================================
+%  《基本不等式》—— 中文数学习题课讲义（Loom 模板 · 课前自学版）
+%  必须用 XeLaTeX 编译两遍；QA 用 scripts/qa_check.py。
+%  第一行的魔法注释让 VS Code (LaTeX Workshop) 走 XeLaTeX——别删。
+% ===========================================================================
+\documentclass{loom}
+
+% 挑战题 ★ 用 Zapf Dingbats 绘制，不依赖系统字体是否含 U+2605
+\usepackage{pifont}
+
+% 页眉线（可选）；偏好极简时可整行注释掉
+%\runningthread{《基本不等式》 · 课前自学讲义}
+
+% ---------------------------------------------------------------------------
+%  讲义专用组件：题面（茜红结）、解析（靛蓝结）、四段式解答标签
+% ---------------------------------------------------------------------------
+% 题目框：breakable=false 保证一题不跨页。默认不留答题空白区。
+% —— 若要做「打印作答版」，取消下面 \answerspace 定义与 problem 框 after upper
+%    一行的注释即可，题末会追加一块纯白书写面板（默认 5 行，可 \answerspace[8]）。
+% \newcommand{\answerspace}[1][5]{\par\medskip\noindent
+%   \colorbox{white}{\parbox[t][#1\baselineskip][t]{\dimexpr\linewidth-2\fboxsep\relax}{\strut}}}
+\newtcolorbox{problem}[1]{knotmadder, breakable=false,
+  before upper={{\headingfont\bfseries\color{madder}#1}\par\smallskip}%
+  % , after upper={\answerspace}   % 打印作答版：取消本行注释
+}
+\newtcolorbox{solution}[1]{knotindigo,
+  before upper={{\headingfont\bfseries\color{indigo}#1}\par\smallskip}}
+
+\newcommand{\think}{\par\smallskip\noindent
+  {\headingfont\bfseries\color{indigo}〔怎么想〕}\enspace}
+\newcommand{\solve}{\par\smallskip\noindent
+  {\headingfont\bfseries\color{inkiron}〔解〕}\enspace}
+\newcommand{\solvehead}[1]{\par\smallskip\noindent
+  {\headingfont\bfseries\color{inkiron}〔#1〕}\enspace}
+\newcommand{\checkup}{\par\smallskip\noindent
+  {\headingfont\bfseries\color{selvage}〔检验〕}\enspace}
+\newcommand{\insight}[1]{\par\smallskip\noindent
+  {\headingfont\bfseries\color{weld!60!inkiron}〔方法小结〕}\enspace
+  {\strandfont\small #1}\par}
+\newcommand{\hint}[1]{\par\smallskip\noindent
+  {\strandfont\small{\raisebox{-0.8pt}{\loomtile{weld}}\hspace{4pt}}%
+  {\bfseries\color{weld!60!inkiron}入手提示}\enspace{\color{inkiron!85!white}#1}}\par}
+% 页边旁批
+\newcommand{\sidenote}[1]{\marginnote{\raggedright\strandfont\footnotesize
+  \color{selvage}#1}}
+\newcommand{\starred}{{\color{weld!70!inkiron}\ding{72}}}
+% 记号 (☆)：a^2+b^2 >= 2ab 的全文代号
+% 空心星用 pifont \ding{73} 绘制——字面 ☆(U+2606) 在部分拉丁字体里没有字形。
+\newcommand{\starref}{(\text{\ding{73}})}
+
+\setlist[enumerate]{leftmargin=2.3em, itemsep=2pt, topsep=3pt}
+\setlist[itemize]{leftmargin=1.6em, itemsep=2pt, topsep=3pt}
+
+\begin{document}
+
+\loomcover
+  {《基本不等式》}
+  {不等号的尽头，是等号}
+  {}
+  {二〇二六年七月}
+
+\clearpage
+{\small\tableofcontents}
+\clearpage
+
+% ---- 第零章：预备知识 ----
+\input{sections/00-preliminaries}
+
+% ---- 第一部分：题目区 ----
+\input{sections/01-block1}
+\input{sections/02-block2}
+\input{sections/03-block3}
+\input{sections/04-block4}
+\input{sections/05-block5}
+\input{sections/06-homework}     % 课后练习：做「自总结版」时整行注释
+\input{sections/07-extensions}   % 拓展阅读（选读）：可整行注释
+
+\clearpage
+% ---- 第二部分：集中解析（与题目区物理分开）----
+\input{sections/90-solutions}
+\input{sections/91-homework-solutions}
+
+% ---- 方法一览（自总结版可注释）----
+\input{sections/99-summary}
+
+\end{document}

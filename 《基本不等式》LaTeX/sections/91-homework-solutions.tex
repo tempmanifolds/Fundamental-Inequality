@@ -1,0 +1,82 @@
+% ===========================================================================
+%  课后练习 · 简解与答案（练习 1–13）
+% ===========================================================================
+\section*{课后练习\quad 简解与答案}
+
+\begin{solution}{练习 1 · 简解}
+由 $0<a<b,\ a+b=1$ 知 $a<\dfrac12$；$ab<\dfrac14$（等号需 $a=b$，取不到），故 $2ab<\dfrac12$；$a^2+b^2=(a+b)^2-2ab=1-2ab>\dfrac12$。四个数中只有 $a^2+b^2$ 超过 $\dfrac12$。\whisper{答案：$a^2+b^2$。}
+\end{solution}
+
+\begin{solution}{练习 2 · 简解}
+正向成立：$ab\le\left(\dfrac{a+b}2\right)^2\le\left(\dfrac42\right)^2=4$。反向不成立，反例 $a=8,\ b=\dfrac14$：$ab=2\le 4$ 而 $a+b=8\dfrac14>4$。\whisper{答案：能推出；不能推出（反例如上）。}
+\end{solution}
+
+\begin{solution}{练习 3 · 简解}
+A：$x<0$ 时不成立（$x=-1$ 时左边为 $-2$）。B：$\sqrt{x^2+2}\ge\sqrt2$ 恒成立。C：$x^2+\dfrac1{x^2}\ge 2>\sqrt2$ 恒成立。D：$x>0$ 时 $-3x-\dfrac4x<0$（如 $x=1$ 时左边为 $-5$），不成立。\whisper{答案：AD。}
+\end{solution}
+
+\begin{solution}{练习 4 · 简解}
+展开：$(x+y)\left(\dfrac1x+\dfrac4y\right)=1+4+\dfrac yx+\dfrac{4x}y\ge 5+2\sqrt4=9$，等号 $y=2x$。\whisper{答案：$9$。}
+\end{solution}
+
+\begin{solution}{练习 5 \starred\ · 简解}
+令 $t=x-1\in(-5,0)$：$y=\dfrac{t^2+1}{2t}=\dfrac12\left(t+\dfrac1t\right)$。$t<0$ 时 $t+\dfrac1t\le -2$（对 $-t>0$ 用基本不等式后还原符号），故 $y\le -1$，等号 $t=-1$ 即 $x=0\in(-4,1)$。左端点 $-4$ 不影响结论。\whisper{答案：最大值 $-1$（$x=0$）。}
+\end{solution}
+
+\begin{solution}{练习 6 \starred\ · 简解}
+$m\le(2a+b)\left(\dfrac2a+\dfrac1b\right)$ 恒成立，等价于 $m\le$ 右边最小值。展开：$4+1+\dfrac{2a}b+\dfrac{2b}a=5+2\left(\dfrac ab+\dfrac ba\right)\ge 5+4=9$，等号 $a=b$。\whisper{答案：$m$ 的最大值为 $9$。}
+\end{solution}
+
+\begin{solution}{练习 7 · 简解}
+$1=\dfrac x3+\dfrac y4\ge 2\sqrt{\dfrac{xy}{12}}$，故 $\dfrac{xy}{12}\le\dfrac14$，$xy\le 3$，等号 $\dfrac x3=\dfrac y4=\dfrac12$，即 $x=\dfrac32,\ y=2$。\whisper{答案：$3$。}
+\end{solution}
+
+\begin{solution}{练习 8 \starred\ · 简解}
+$(x+2)+(y+1)=4$。乘 $1=\dfrac{(x+2)+(y+1)}{4}$：
+\[
+\frac{4}{x+2}+\frac{1}{y+1}=\frac14\left(5+\frac{4(y+1)}{x+2}+\frac{x+2}{y+1}\right)\ge\frac14(5+4)=\frac94,
+\]
+等号 $x+2=2(y+1)$，配合 $x+y=1$ 得 $x=\dfrac23,\ y=\dfrac13$。\whisper{答案：$\dfrac94$。}
+\end{solution}
+
+\begin{solution}{练习 9 · 简解}
+（书例 1.2-1）改写 $8x=4(2x-1)+4$：
+\[
+f(x)=4(2x-1)+\frac{1}{2x-1}+4\ge 2\sqrt{4(2x-1)\cdot\frac1{2x-1}}+4=8,
+\]
+等号 $4(2x-1)=\dfrac1{2x-1}$，即 $(2x-1)^2=\dfrac14$，$2x-1=\dfrac12>0$，$x=\dfrac34$。\whisper{答案：$8$（$x=\frac34$）。}
+\end{solution}
+
+\begin{solution}{练习 10 · 简解}
+（书例 1.3-4）条件两边同除 $5xy$：$\dfrac{1}{5y}+\dfrac{3}{5x}=1$。乘 1：
+\[
+3x+4y=(3x+4y)\left(\frac{1}{5y}+\frac{3}{5x}\right)=\frac{3x}{5y}+\frac{12y}{5x}+\frac95+\frac45\ge\frac25\sqrt{36}+\frac{13}5=5,
+\]
+等号 $\dfrac{3x}{5y}=\dfrac{12y}{5x}$ 即 $x=2y$，回代条件得 $y=\dfrac12,\ x=1$。\whisper{答案：C（$5$）。}
+\end{solution}
+
+\begin{solution}{练习 11 \starred\ · 简解}
+（书例 1.2-2）A 错：$x=y=1$ 满足条件而 $x+y=2$。D 错：$x=\dfrac{\sqrt3}3,\ y=-\dfrac{\sqrt3}3$ 满足条件而 $x^2+y^2=\dfrac23<1$。C 对：由 $xy\le\dfrac{x^2+y^2}2$（\starref{}，对一切实数成立），$1=x^2+y^2-xy\ge\dfrac{x^2+y^2}2$，故 $x^2+y^2\le 2$。B 对：配方 $1=\dfrac{(x+y)^2}4+\dfrac{3(x-y)^2}4\ge\dfrac{(x+y)^2}4$，故 $(x+y)^2\le 4$，$-2\le x+y\le 2$。\whisper{答案：BC。}
+\end{solution}
+
+\begin{solution}{练习 12 \starred\starred\ · 简解}
+（书例 1.2-3）$1=(5x^2+y^2)\cdot y^2$，两边乘 4：
+\[
+4=(5x^2+y^2)\cdot 4y^2\le\left[\frac{(5x^2+y^2)+4y^2}{2}\right]^2=\frac{25}4(x^2+y^2)^2,
+\]
+故 $(x^2+y^2)^2\ge\dfrac{16}{25}$，$x^2+y^2\ge\dfrac45$。等号：$5x^2+y^2=4y^2=2$，即 $y^2=\dfrac12,\ x^2=\dfrac3{10}$，代回条件 $y^2(5x^2+y^2)=\dfrac12\times2=1$ 成立。\whisper{答案：$\dfrac45$。}
+\end{solution}
+
+\begin{solution}{练习 13 \starred\ · 简解}
+（书例 1.2-7）由条件 $z=x^2-3xy+4y^2$：
+\[
+\frac z{xy}=\frac{x^2+4y^2}{xy}-3\ge\frac{2\sqrt{x^2\cdot4y^2}}{xy}-3=4-3=1,
+\]
+等号 $x=2y$。此时 $z=4y^2-6y^2+4y^2=2y^2$，于是
+\[
+x+2y-z=2y+2y-2y^2=4y-2y^2=2-2(y-1)^2\le 2,
+\]
+$y=1$ 时取到（$x=2,\ z=2$，均为正数，且 $x^2-3xy+4y^2=4-6+4=2=z$ 成立）。\whisper{答案：C（$2$）。}
+\end{solution}
+
+\clearpage

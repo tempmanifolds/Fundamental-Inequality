@@ -1,0 +1,61 @@
+% ===========================================================================
+%  板块二 · 基本不等式的几何解释（卡片 2 + 题 5）
+% ===========================================================================
+\section{基本不等式的几何解释}
+
+\begin{strand}
+\keyword{本板块主线}：半弦不过半径。
+\end{strand}
+
+\block{知识精讲：构图}
+
+\starref{} 有一张著名的图：\keyword{赵爽弦图}。四个直角三角形（直角边 $a$、$b$）拼入大正方形，四个三角形面积之和 $2ab$ 不超过大正方形面积 $a^2+b^2$，空隙恰是 $(a-b)^2$。
+
+基本不等式 $\dfrac{a+b}{2}\ge\sqrt{ab}$ 说的则是\textbf{长度}。构图按以下问题展开（题 5 完整完成这条路）：
+
+\begin{itemize}
+  \item 问题 1：$\dfrac{a+b}{2}$ 与 $\sqrt{ab}$ 都是长度，先构造哪个？——把长为 $a$、$b$ 的两条线段首尾相接：在直线上取 $A$、$E$、$B$，使 $AE=a$，$EB=b$；取 $AB$ 的中点 $O$，则 $OA=OB=\dfrac{a+b}{2}$。
+  \item 问题 2：长为 $\dfrac{a+b}{2}$ 的线段有多少条？——以 $O$ 为圆心、$\dfrac{a+b}{2}$ 为半径作圆，每条半径都是。
+  \item 问题 3：$\sqrt{ab}$ 在哪里？——过 $E$ 作 $AB$ 的垂线，交半圆于 $D$，连接 $AD$、$BD$。由圆周角定理（0.3），$\angle ADB=90^\circ$；由射影定理（0.3），$DE^2=AE\cdot EB=ab$，即 $DE=\sqrt{ab}$。
+  \item 结论：$DE$ 是过 $E$ 的半弦，$DO$ 是半径，半弦不超过半径，即 $\sqrt{ab}\le\dfrac{a+b}{2}$。
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, line cap=round]
+  % 半圆：直径 AB，AE=a=1.4, EB=b=3.6，半径 r=2.5
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5,0);
+  \coordinate (O) at (2.5,0);
+  \coordinate (E) at (1.4,0);
+  \coordinate (D) at (1.4,2.2449); % sqrt(1.4*3.6)=sqrt(5.04)
+  \draw[inkiron] (A) -- (B);
+  \draw[inkiron] (B) arc (0:180:2.5);
+  \draw[selvage] (A) -- (D) -- (B);
+  \draw[madder, very thick] (E) -- (D) node[midway, left, madder]{\small $\sqrt{ab}$};
+  \draw[indigo, very thick] (O) -- (D) node[midway, above right=-1pt, indigo]{\small $\dfrac{a+b}{2}$};
+  % 直角记号
+  \draw[inkiron] (1.4,0.16) -- (1.56,0.16) -- (1.56,0);
+  % 点与标注
+  \foreach \p/\n/\where in {A/A/below, B/B/below, O/O/below, E/E/below, D/D/above}{
+    \fill[inkiron] (\p) circle (1.3pt);
+    \node[\where, inkiron] at (\p) {\small $\n$};
+  }
+  \draw[weld, |-|] (0,-0.55) -- node[below, weld]{\small $a$} (1.4,-0.55);
+  \draw[weld, |-|] (1.4,-0.55) -- node[below, weld]{\small $b$} (5,-0.55);
+\end{tikzpicture}
+\end{center}
+
+\textbf{等号的位置。}半弦等于半径，只能是垂足 $E$ 与圆心 $O$ 重合，此时 $a=b$，$D$ 位于半圆最高点，$DE$ 本身就是一条半径。「当且仅当 $a=b$ 取等号」在图上对应一个确定的位置。
+
+\begin{problem}{题 5 （半圆中的构造）}
+在直线上依次取点 $A$、$E$、$B$，使 $AE=a$，$EB=b$（$a,b>0$）。以 $AB$ 为直径、中点 $O$ 为圆心作半圆，过 $E$ 作 $AB$ 的垂线交半圆于 $D$，连接 $AD$、$BD$、$DO$。
+
+(1) 说明 $\angle ADB=90^\circ$，并用射影定理求 $DE$（用 $a$、$b$ 表示）；
+
+(2) 在 $\mathrm{Rt}\triangle DEO$ 中比较 $DE$ 与 $DO$，写出对应的不等式；
+
+(3) 等号成立时，$E$、$D$ 各在什么位置？此时 $a$、$b$ 满足什么关系？
+\hint{(1) 0.3 的两条定理各用一次；(2) 斜边与直角边孰长；(3) 考察 $DE=DO$ 时三角形退化成什么。}
+\end{problem}
+
+\clearpage

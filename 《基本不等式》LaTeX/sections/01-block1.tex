@@ -1,0 +1,107 @@
+% ===========================================================================
+%  板块一 · 基本不等式及其变形（卡片 1 + 题 1–4）
+% ===========================================================================
+\section{基本不等式及其变形}
+
+\begin{strand}
+\keyword{本板块主线}：由 \starref{} 经替换得到基本不等式，认清「和」与「积」两种形态，并明确取等条件。
+\end{strand}
+
+\block{引例：连续打折的平均折扣}
+
+一件衣服先打 8 折，再打 9 折。能说「平均每次打 8.5 折」吗？
+
+两次连打后价格变为原来的 $0.8\times 0.9=0.72$。「平均每次打 $x$ 折」应当满足 $x\cdot x=0.72$，即
+\[
+x=\sqrt{0.72}\approx 0.849,
+\]
+不是 $0.85$。注意这里的「平均」是对\textbf{乘法}说的：把两次不同的折扣换成两次相同的折扣，总效果不变。一般地：
+\begin{itemize}
+  \item 把 $a+b$ 换成两个相同数之和：$a+b=\dfrac{a+b}{2}+\dfrac{a+b}{2}$，数 $\dfrac{a+b}{2}$ 称为 $a$、$b$ 的\keyword{算术平均数}；
+  \item 把 $ab$ 换成两个相同数之积：$ab=\sqrt{ab}\cdot\sqrt{ab}$，数 $\sqrt{ab}$ 称为正数 $a$、$b$ 的\keyword{几何平均数}。
+\end{itemize}
+打折问题里 $\sqrt{0.72}\approx 0.849<0.85=\dfrac{0.8+0.9}{2}$：几何平均数小于算术平均数。这不是巧合，下面给出一般结论。
+
+\block{知识精讲：从 \starref{} 到基本不等式}
+
+对任意实数 $a$、$b$，把 $(a-b)^2\ge 0$ 展开移项，得到本讲的出发点，记作 \starref{}：
+\[
+a^2+b^2\ge 2ab\quad(a,b\in\mathbb{R}),\ \text{当且仅当 } a=b \text{ 时取等号}. \tag{\ding{73}}
+\]
+
+设 $a>0$，$b>0$。在 \starref{} 中用 $\sqrt a$ 替换 $a$、用 $\sqrt b$ 替换 $b$（替换要求 $\sqrt a$、$\sqrt b$ 有意义，这正是限定 $a,b>0$ 的原因）：
+\[
+(\sqrt a)^2+(\sqrt b)^2\ge 2\sqrt a\cdot\sqrt b,\qquad\text{即}\qquad a+b\ge 2\sqrt{ab},
+\]
+两边除以 2，得
+
+\begin{proposition}[基本不等式]
+\[
+\frac{a+b}{2}\ \ge\ \sqrt{ab}\quad(a,b>0),\ \text{当且仅当 } a=b \text{ 时取等号}.
+\]
+\end{proposition}
+
+取等条件由 \starref{} 继承而来：$\sqrt a=\sqrt b$，即 $a=b$。这意味着：\textbf{两个正数的算术平均数，不小于它们的几何平均数。}打折问题不是巧合，是定理。%
+\sidenote{另一条推导：由 0.2 的恒等式 $(a-b)^2+4ab=(a+b)^2$ 得 $(a+b)^2\ge 4ab$；$a,b>0$ 时两边均非负，开方即得 $a+b\ge 2\sqrt{ab}$。（书 1.2.1）}
+
+\textbf{使用步骤（比大小、放缩时）。}
+\begin{enumerate}
+  \item 确认两个量\textbf{都是正数}；
+  \item 认出「和」与「积」两种形态：$a+b\ge 2\sqrt{ab}$，或 $ab\le\left(\dfrac{a+b}{2}\right)^2$；
+  \item 写清\textbf{等号何时成立}（把 $a=b$ 代回检验）。
+\end{enumerate}
+
+\textbf{常用变形一览}（$a,b>0$）：
+% 注释开关：自总结版可把下表整表留空，让学生课后自己填
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}l l L@{}}
+\toprule
+\multicolumn{1}{l}{\color{indigo}变形} &
+\multicolumn{1}{l}{\color{indigo}形式} &
+\multicolumn{1}{l}{\color{indigo}记忆} \\
+\midrule
+和的下界 & $a+b\ge 2\sqrt{ab}$                  & 和 $\ge$ 两倍根号积 \\
+积的上界 & $ab\le\left(\dfrac{a+b}{2}\right)^2$ & 积 $\le$ 半和的平方 \\
+倒数对   & $\dfrac{b}{a}+\dfrac{a}{b}\ge 2$     & 互倒之和不小于 2 \\
+特例     & $a+\dfrac{1}{a}\ge 2$                & $x$ 与 $\dfrac1x$（$x>0$） \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% 注释开关：易错提醒（自总结版可 \iffalse … \fi 注释）
+\textbf{易错提醒。}
+\begin{itemize}
+  \item 基本不等式的\textbf{前提是正数}。$a+\dfrac1a\ge 2$ 对 $a<0$ 不成立（此时 $a+\dfrac1a\le -2$，见下面的「想一想」）。
+  \item \starref{} 对\textbf{一切实数}成立；基本不等式只对\textbf{正数}成立，二者适用范围不同。特别地，$ab\le\left(\dfrac{a+b}{2}\right)^2$ 对一切实数成立（它就是 \starref{} 的移项配方），这一点在拓展 D 中是关键。
+\end{itemize}
+
+\begin{remark*}
+想一想：\textbf{(1)} $\left(\dfrac{a+b}{2}\right)^2\ge ab$ 与 $\dfrac{a+b}{2}\ge\sqrt{ab}$ 等价吗？（前者对一切实数成立；后者含根号，只在 $a,b\ge 0$ 时有意义。）\quad
+\textbf{(2)} $a+\dfrac{1}{a}\ge 2$（$a\ne 0$）恒成立吗？取 $a=-1$ 检验。
+\end{remark*}
+
+\begin{problem}{题 1 （作差与公式的选择）}
+已知 $a,b>0$，比较下列各组数的大小，并说明理由：
+
+(1) $\dfrac{a}{b}+\dfrac{b}{a}$ 与 $2$；\quad
+(2) $a^2+3$ 与 $3a$（本小问 $a$ 为任意实数）；\quad
+(3) 把 (2) 中的 $3$ 都换成 $2$，结论有何变化？
+\hint{(1) 是「互倒之和」；(2) $3a$ 可能为负，基本不等式的正数前提不满足时，回到 0.1 的作差法，对差配方。}
+\end{problem}
+
+\begin{problem}{题 2 （四数排序）}
+设 $0<a<b$，把 $a,\ b,\ \sqrt{ab},\ \dfrac{a+b}{2}$ 从小到大排列，并逐段证明。
+\hint{三个空隙，三次比较：$a$ 与 $\sqrt{ab}$ 比较时提出公因式 $\sqrt{a}$；中间一段是基本不等式（$a\ne b$，等号取不到，写严格不等号）。}
+\end{problem}
+
+\begin{problem}{题 3 \starred（两步放缩）}
+已知 $a>0$，比较 $a^2+\dfrac{2}{a}$ 与 $3$ 的大小。
+\hint{一次基本不等式不够用（一项带平方、一项带分母）。分两步：先用 $a^2+1\ge 2a$ 降次，再处理剩下的部分；用 0.1 的传递性衔接，并检查两步的等号能否\textbf{同时}成立。}
+\end{problem}
+
+\begin{problem}{题 4 （下界与上界）}
+已知 $m=a+\dfrac{1}{a-2}$（$a>2$），$n=4-b^2$（$b\ne 0$），比较 $m$ 与 $n$ 的大小。
+\hint{把 $a$ 拆成 $(a-2)+2$，$m$ 中出现互为倒数的一对；再考察 $n$ 的上界是多少、取得到吗。}
+\end{problem}
+
+\clearpage

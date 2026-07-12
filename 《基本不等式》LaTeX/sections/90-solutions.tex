@@ -1,0 +1,327 @@
+% ===========================================================================
+%  第二部分 · 参考答案与详细解析（题 1–17，四段式，与题目区一一对应）
+% ===========================================================================
+\section*{第二部分\quad 参考答案与详细解析}
+
+\begin{strand}
+每题按「怎么想 → 解 → 检验 → 方法小结」展开。先看「怎么想」核对思路方向，再看解答核对细节。
+\end{strand}
+
+\begin{solution}{题 1 · 解析（作差与公式的选择）}
+\think (1) 是「互倒之和」的标准形式。(2) 的关键在 $a$ 可取负值：基本不等式的正数前提不满足，应退回作差配方。(3) 换成 2 后，配方所得的常数项还剩多少？
+
+\solve (1) 因为 $a,b>0$，所以 $\dfrac ab>0,\ \dfrac ba>0$，且 $\dfrac ab\cdot\dfrac ba=1$ 为定值。由基本不等式
+\[
+\frac ab+\frac ba\ge 2\sqrt{\frac ab\cdot\frac ba}=2,
+\]
+当且仅当 $\dfrac ab=\dfrac ba$，即 $a=b$ 时取等号。故 $\dfrac ab+\dfrac ba\ge 2$（$a=b$ 时相等）。
+
+(2) 作差：$a^2+3-3a=\left(a-\dfrac32\right)^2+\dfrac34\ge\dfrac34>0$，对一切实数 $a$ 成立。故 $a^2+3>3a$，且等号永远取不到。
+
+(3) $a^2+2-2a=(a-1)^2\ge 0$，即 $a^2+2\ge 2a$，$a=1$ 时相等。常数换成 2 后恰好配成完全平方，「严格大于」变为「可以相等」。
+
+\checkup (2) 取 $a=\dfrac32$（差的最小值点）：左边 $=\dfrac{21}4$，右边 $=\dfrac{18}4$，差为 $\dfrac34$，与配方结果一致。(3) 取 $a=1$：两边均为 3。
+
+\insight{变量可能取负时先作差配方；确认各项为正后才可使用基本不等式。配方后的常数项决定「严格大于」还是「可以相等」。}
+\end{solution}
+
+\begin{solution}{题 2 · 解析（四数排序）}
+\think 先猜排序：$a$ 最小、$b$ 最大、两个平均数居中、算术平均在几何平均之上（引例已给出方向）。三个空隙逐段作差或提公因式。
+
+\solve 设 $0<a<b$。
+
+① $\sqrt{ab}-a=\sqrt a(\sqrt b-\sqrt a)>0$（因 $\sqrt b>\sqrt a>0$），故 $a<\sqrt{ab}$。
+
+② 由基本不等式且 $a\ne b$：$\sqrt{ab}<\dfrac{a+b}{2}$（等号条件不满足，取严格不等号）。
+
+③ $b-\dfrac{a+b}{2}=\dfrac{b-a}{2}>0$，故 $\dfrac{a+b}{2}<b$。
+
+综上：$a<\sqrt{ab}<\dfrac{a+b}{2}<b$。
+
+\checkup 取 $a=1,b=9$：$1<3<5<9$，成立。
+
+\insight{两个平均数总被夹在原来两数之间。对照板块二的图：$\sqrt{ab}$（半弦）与 $\frac{a+b}2$（半径）都比整条直径短、比较短的一段长。}
+\end{solution}
+
+\begin{solution}{题 3 \starred\ · 解析（两步放缩）}
+\think 一次基本不等式不够：若直接写 $a^2+\dfrac2a\ge 2\sqrt{2a}$，右边含 $a$，不是常数（与题 13 D 同类错误）。改走两步，每一步都朝「消去平方、凑出互倒」进行。
+
+\solve 因为 $a>0$：
+
+第一步：$a^2+1\ge 2a$（即 \starref{}），所以
+\[
+a^2+\frac2a=(a^2+1)+\frac2a-1\ge 2a+\frac2a-1.
+\]
+第二步：$2a+\dfrac2a=2\left(a+\dfrac1a\right)\ge 2\cdot 2=4$。
+
+由传递性（0.1 旁注）：$a^2+\dfrac2a\ge 4-1=3$。
+
+取等条件核对：第一步要求 $a=1$，第二步要求 $a=\dfrac1a$ 即 $a=1$，两步一致。故 $a^2+\dfrac2a\ge 3$，当且仅当 $a=1$ 时取等号。
+
+\checkup $a=1$：$1+2=3$；$a=2$：$4+1=5>3$。
+
+\insight{链式放缩中，各步取等条件必须在同一点成立。若取等点不同，合成的「$\ge$」仍然正确，但端点值取不到，得到的只是下界而非最值。}
+\end{solution}
+
+\begin{solution}{题 4 · 解析（下界与上界）}
+\think $m$ 是配凑互倒的典型：$a>2$ 时 $a-2>0$，拆 $a=(a-2)+2$。$n$ 是有上界的二次式：$b\ne 0$ 使它到不了 4。$m$ 的下界是 4 且可以取到，$n$ 的上界是 4 且取不到，两者由此分开。
+
+\solve 因为 $a>2$，$a-2>0$：
+\[
+m=(a-2)+\frac{1}{a-2}+2\ge 2\sqrt{(a-2)\cdot\frac{1}{a-2}}+2=4,
+\]
+当且仅当 $a-2=\dfrac{1}{a-2}$，即 $a=3$ 时取等号，故 $m\ge 4$。
+
+又 $b\ne 0$ 时 $b^2>0$，故 $n=4-b^2<4$。
+
+所以 $n<4\le m$，即 $m>n$。
+
+\checkup $a=3$：$m=4$；$b=0.1$：$n=3.99<4$。
+
+\insight{分母确定后，把分母以外的部分改写为「分母 + 常数」。比较两个变量的大小，常分别求出一方的下界与另一方的上界，验证两条界线是否分开。}
+\end{solution}
+
+\begin{solution}{题 5 · 解析（半圆中的构造）}
+\think 两条预备定理各司其职：圆周角定理提供直角三角形，射影定理给出 $\sqrt{ab}$。最后一步只需「斜边不小于直角边」。
+
+\solve (1) $AB$ 为直径，$D$ 在圆上，由 0.3 圆周角定理，$\angle ADB=90^\circ$。于是 $\triangle ADB$ 是直角三角形，$DE$ 是斜边 $AB$ 上的高，垂足 $E$ 把斜边分成 $AE=a$、$EB=b$。由射影定理：
+\[
+DE^2=AE\cdot EB=ab,\qquad DE=\sqrt{ab}.
+\]
+
+(2) $DO$ 为半径，$DO=\dfrac{a+b}{2}$。在 $\mathrm{Rt}\triangle DEO$ 中（直角在 $E$），$DO$ 是斜边，$DE$ 是直角边，故
+\[
+DE\le DO,\qquad\text{即}\qquad \sqrt{ab}\le\frac{a+b}{2}.
+\]
+
+(3) 等号成立当且仅当三角形退化，即 $E$ 与 $O$ 重合。此时 $AE=EB$，$a=b$，$D$ 位于半圆最高点，$DE$ 即为一条半径。
+
+\checkup $a=1,b=9$：半径 5，$OE=4$，$DE=3$，$3^2+4^2=5^2$，且 $3<5$，与勾股定理及结论一致。
+
+\insight{半弦不过半径：一句话概括不等式本身与取等条件——半弦等于半径，当且仅当垂足与圆心重合。}
+
+\begin{remark*}
+延伸（不使用 0.3 的另一条路）：在过 $E$ 的垂线上取点 $D'$ 使 $ED'=\sqrt{ab}$，由勾股定理算得 $OD'^2=\left(\dfrac{b-a}{2}\right)^2+ab=\left(\dfrac{a+b}{2}\right)^2$，即 $OD'$ 等于半径，$D'$ 落在圆上，与 $D$ 为同一点。两条路线可互相印证。
+\end{remark*}
+\end{solution}
+
+\begin{solution}{题 6 · 解析（逐项放缩相乘）}
+\think 右边 $8x^3y^3=2\cdot 2\cdot 2\cdot x^3y^3$，提示三次基本不等式各出一个因子 2；三个括号分别对应 $x\cdot y$、$x^2\cdot y^2$、$x^3\cdot y^3$。
+
+\solve 因为 $x,y>0$，下列三式两边均为正：
+\[
+x+y\ge 2\sqrt{xy},\qquad x^2+y^2\ge 2\sqrt{x^2y^2}=2xy,\qquad x^3+y^3\ge 2\sqrt{x^3y^3}.
+\]
+同向相乘：
+\[
+(x+y)(x^2+y^2)(x^3+y^3)\ge 8\sqrt{xy}\cdot xy\cdot\sqrt{x^3y^3}=8\,xy\cdot\sqrt{x^4y^4}=8x^3y^3.
+\]
+三处等号都当且仅当 $x=y$，可同时成立。故原不等式成立，$x=y$ 时取等。
+
+\checkup $x=y=1$：左边 $=8$，右边 $=8$；$x=1,y=2$：左边 $=3\cdot5\cdot9=135$，右边 $=64$，不等式成立。
+
+\insight{正数不等式可同向相乘，取等条件必须全体一致。右边为 $2^k\times$ 单项式时，可先考虑 $k$ 次基本不等式相乘。}
+\end{solution}
+
+\begin{solution}{题 7 \starred\ · 解析（用条件替换 1）}
+\think 目标中的分子都是 1，条件给出 $1=a+b+c$。把 1 原地替换，每个分式裂为三项，整理出 3 个常数与 3 对互倒。
+
+\solve 由 $a+b+c=1$：
+\[
+\frac1a+\frac1b+\frac1c=\frac{a+b+c}{a}+\frac{a+b+c}{b}+\frac{a+b+c}{c}
+=3+\left(\frac ba+\frac ab\right)+\left(\frac ca+\frac ac\right)+\left(\frac cb+\frac bc\right).
+\]
+三对互倒之和各不小于 2（题 1(1)），故右边 $\ge 3+2+2+2=9$。三处等号分别要求 $a=b$、$a=c$、$b=c$，即 $a=b=c=\dfrac13$，可同时成立。
+
+\checkup $a=b=c=\dfrac13$：左边 $=3+3+3=9$。
+
+\insight{条件「和为 1」的标准用法：把目标中的 1 替换为这个和。「乘 1」与「换 1」实为同一操作，板块五反复使用。}
+\end{solution}
+
+\begin{solution}{题 8 · 解析（直接使用）}
+\think 三查：一正（$x>0$，两项皆正）；二定（$4x\cdot\dfrac{12}x=48$ 为定值）；三相等（等号点是否在定义域内，算出来核对）。
+
+\solve $x>0$ 时，
+\[
+y=4x+\frac{12}{x}\ge 2\sqrt{4x\cdot\frac{12}{x}}=2\sqrt{48}=8\sqrt3,
+\]
+当且仅当 $4x=\dfrac{12}{x}$，即 $x^2=3$，$x=\sqrt3$（取正）时取等号。最小值为 $8\sqrt3$（此时 $x=\sqrt3$）。
+
+\checkup $x=\sqrt3$：$y=4\sqrt3+4\sqrt3=8\sqrt3$；$x=1$：$y=16>8\sqrt3\approx 13.86$。
+
+\insight{积为定值 $P$ 时，和的最小值为 $2\sqrt{P}$，结果常含根号。报最小值必须同时给出取到最小值的位置。}
+\end{solution}
+
+\begin{solution}{题 9 · 解析（负变量先转正）}
+\think $x<0$ 时两项均为负，不满足「一正」。对 $-x>0$、$-\dfrac{1}{2x}>0$ 使用基本不等式，再把符号还原；不等号方向随之反转，最小值问题变为最大值问题。
+
+\solve $x<0$ 时，$-x>0$，$-\dfrac{1}{2x}>0$，且积 $(-x)\left(-\dfrac{1}{2x}\right)=\dfrac12$ 为定值：
+\[
+(-x)+\left(-\frac{1}{2x}\right)\ge 2\sqrt{\frac12}=\sqrt2,
+\]
+即 $x+\dfrac{1}{2x}\le-\sqrt2$，从而 $y=x+\dfrac{1}{2x}-2\le-\sqrt2-2$。
+
+等号当且仅当 $-x=-\dfrac{1}{2x}$，即 $x^2=\dfrac12$，$x=-\dfrac{\sqrt2}{2}$（取负）。最大值为 $-2-\sqrt2$。
+
+\checkup $x=-\dfrac{\sqrt2}2$：$x+\dfrac1{2x}=-\sqrt2$，$y=-\sqrt2-2$，与结论一致。
+
+\insight{负区间求最值：先取相反数转正，用完基本不等式再把不等号方向还原。与题 8 相比只多一步转正。}
+\end{solution}
+
+\begin{solution}{题 10 · 解析（配凑定值）}
+\think (1) $x$ 与 $\dfrac1{x-1}$ 之积不是定值，但 $(x-1)$ 与 $\dfrac{1}{x-1}$ 互为倒数，故把 $x$ 拆为 $(x-1)+1$。(2) 分母是 $x-1$，就用 $x-1$ 改写分子。
+
+\solve (1) $x>1$ 时 $x-1>0$：
+\[
+y=(x-1)+\frac{1}{x-1}+1\ge 2\sqrt{(x-1)\cdot\frac{1}{x-1}}+1=3,
+\]
+当且仅当 $x-1=\dfrac1{x-1}$，即 $x=2$ 时取等。最小值 $3$。
+
+(2) 分子 $x^2=(x-1)^2+2(x-1)+1$，故
+\[
+y=\frac{x^2}{x-1}=(x-1)+\frac{1}{x-1}+2\ge 2+2=4,
+\]
+当且仅当 $x=2$ 时取等。最小值 $4$。
+
+\checkup (1) $x=2$：$y=3$。(2) $x=2$：$y=4$；$x=3$：$y=4.5>4$。
+
+\insight{分母确定后，把式子改写为「分母 + 分母的倒数 + 常数」。配凑不改变函数本身，只改变观察角度。（(1) 是题 8 经变量平移得到的变形，参见拓展 C。）}
+\end{solution}
+
+\begin{solution}{题 11 \starred\ · 解析（取倒数）}
+\think 分子一次、分母二次，直接处理不便；其倒数 $\dfrac{x^2}{x-1}$ 恰是题 10(2)。正数中较大者倒数较小，最小值 4 对应倒数的最大值 $\dfrac14$。
+
+\solve $x>1$ 时 $x-1>0$，故 $y=\dfrac{x-1}{x^2}>0$。由题 10(2)：$\dfrac{x^2}{x-1}\ge 4$，两边取倒数（均为正，方向反转）：
+\[
+y=\frac{x-1}{x^2}\le\frac14,
+\]
+当且仅当 $x=2$ 时取等。最大值 $\dfrac14$。
+
+\checkup $x=2$：$y=\dfrac{1}{4}$；$x=3$：$y=\dfrac29<\dfrac14$。
+
+\insight{结构不便处理时可考察倒数。正数间取倒数反转大小关系：最小值的倒数即倒数的最大值，转换前必须确认符号为正。}
+\end{solution}
+
+\begin{solution}{题 12 · 解析（和定积最大）}
+\think (1) $x+(1-x)=1$，和为定值。(2) $x+(1-2x)$ 不是定值，配系数使两因子之和消去 $x$：$2x+(1-2x)=1$。
+
+\solve (1) $0<x<1$ 时 $x>0,\ 1-x>0$，两者之和为 1：
+\[
+y=x(1-x)\le\left(\frac{x+(1-x)}{2}\right)^2=\frac14,
+\]
+当且仅当 $x=1-x$，即 $x=\dfrac12$ 时取等。最大值 $\dfrac14$。
+
+(2) $0<x<\dfrac12$ 时 $2x>0,\ 1-2x>0$：
+\[
+y=x(1-2x)=\frac12\cdot 2x(1-2x)\le\frac12\left(\frac{2x+(1-2x)}{2}\right)^2=\frac12\cdot\frac14=\frac18,
+\]
+当且仅当 $2x=1-2x$，即 $x=\dfrac14$ 时取等。最大值 $\dfrac18$。
+
+\checkup (1) $x=\dfrac12$：$y=\dfrac14$。(2) $x=\dfrac14$：$y=\dfrac14\cdot\dfrac12=\dfrac18$。
+
+\insight{和为定值 $S$ 时积的最大值为 $\frac{S^2}{4}$；和不是定值时先配系数凑成定值，配完在外面除回去。几何解释：周长一定的矩形中，正方形面积最大。}
+\end{solution}
+
+\begin{solution}{题 13 · 解析（等号成立条件辨析）}
+\think 四个说法都围绕「三相等」。A、B 换元后检查等号点是否可达；C 只断言不等式恒成立，不要求右边是定值；D 把「等号条件成立处的函数值」当成了「最小值」，而右边 $2\sqrt x$ 不是定值，推理不成立。
+
+\solve A（真）。设 $t=\sqrt{x^2+1}\ge 1$，$y=t+\dfrac4t\ge 2\sqrt4=4$，等号要求 $t=2$，即 $x^2+1=4$，$x=\pm\sqrt3$，可以取到。最小值确为 4。
+
+B（真）。由 A 的推理，$y\ge 4$ 对一切实数 $x$ 成立。
+
+C（真）。$x>0$ 时，$x^2>0,\ \dfrac1x>0$，由基本不等式 $x^2+\dfrac1x\ge 2\sqrt{x^2\cdot\dfrac1x}=2\sqrt x$，恒成立（等号在 $x=1$）。
+
+D（假）。$x=1$ 时 $y=2$ 只是一个函数值。$2\sqrt x$ 不是定值，「$y\ge 2\sqrt x$」不能给出最小值。反例：$x=0.8$ 时 $y=0.64+1.25=1.89<2$，故 2 不是最小值。
+
+\checkup A：$x=\sqrt3$ 时 $t=2$，$y=4$。D 的反例已代入验证。
+
+\insight{「$\ge$」的右边是定值、且等号可以取到，二者齐备才能宣布最值。C 与 D 的对照说明：同一个不等式，「恒成立」为真而「最小值」为假，二者不可混同。}
+\end{solution}
+
+\begin{solution}{题 14 · 解析（「1」的代换）}
+\think 四小问是同一方法的四种形态：(1)(2) 直接乘 1 展开；(3) 是 (2) 的变量替换形式；(4) 先设新变量，再乘新的定值和。
+
+\solve $a,b>0,\ a+b=1$。
+
+(1) $\dfrac1a+\dfrac1b=\left(\dfrac1a+\dfrac1b\right)(a+b)=2+\dfrac ba+\dfrac ab\ge 2+2=4$，当且仅当 $a=b=\dfrac12$ 取等。最小值 $4$。
+
+(2) $\dfrac1a+\dfrac2b=\left(\dfrac1a+\dfrac2b\right)(a+b)=1+2+\dfrac ba+\dfrac{2a}{b}\ge 3+2\sqrt{\dfrac ba\cdot\dfrac{2a}b}=3+2\sqrt2$，当且仅当 $\dfrac ba=\dfrac{2a}b$，即 $b=\sqrt2 a$，配合 $a+b=1$ 得 $a=\sqrt2-1,\ b=2-\sqrt2$（均为正）。最小值 $3+2\sqrt2$。
+
+(3) 令 $b=1-a\in(0,1)$，则 $\dfrac1a+\dfrac{2}{1-a}=\dfrac1a+\dfrac2b$ 且 $a+b=1$，与 (2) 相同。最小值 $3+2\sqrt2$。
+
+(4) 令 $u=a+1,\ v=b+1$，则 $u,v>0$ 且 $u+v=3$：
+\[
+\frac1u+\frac1v=\frac13\left(\frac1u+\frac1v\right)(u+v)=\frac13\left(2+\frac vu+\frac uv\right)\ge\frac13(2+2)=\frac43,
+\]
+当且仅当 $u=v=\dfrac32$，即 $a=b=\dfrac12$ 取等。最小值 $\dfrac43$。
+
+\checkup (2) $a=\sqrt2-1$：$\dfrac1a=\sqrt2+1$，$\dfrac2b=\dfrac{2}{2-\sqrt2}=2+\sqrt2$，两项之和 $3+2\sqrt2$。(4) $a=b=\dfrac12$：$\dfrac{1}{3/2}\times2=\dfrac43$。
+
+\insight{条件和为定值 $S$、目标为倒数和时，乘上 $\frac{\text{和}}{S}$ 这个「1」，常数项保留、互倒对用基本不等式。常见的两种伪装是变量平移（(3)）与整体换元（(4)），先找出定值和即可还原。}
+\end{solution}
+
+\begin{solution}{题 15 \starred\ · 解析（和与积的互化）}
+\think 条件 $ab=a+b+3$ 中和与积相互纠缠，都不是定值。方法是把其中一个换成另一个：求 $ab$ 时用 $a+b\ge 2\sqrt{ab}$ 消去 $a+b$；求 $a+b$ 时用 $ab\le\left(\frac{a+b}2\right)^2$ 消去 $ab$，各得一个单变量的二次不等式。
+
+\solve 求 $ab$：由 $a+b\ge 2\sqrt{ab}$，得 $ab=a+b+3\ge 2\sqrt{ab}+3$。设 $t=\sqrt{ab}>0$：
+\[
+t^2-2t-3\ge 0\ \Longrightarrow\ (t-3)(t+1)\ge 0.
+\]
+因为 $t>0$，因式 $t+1$ 恒正，故必有 $t-3\ge 0$，即 $t\ge 3$，$ab=t^2\ge 9$。
+
+求 $a+b$：由 $ab\le\left(\dfrac{a+b}2\right)^2$，设 $s=a+b>0$：
+\[
+s+3\le\frac{s^2}{4}\ \Longrightarrow\ s^2-4s-12\ge 0\ \Longrightarrow\ (s-6)(s+2)\ge 0,
+\]
+同理 $s+2>0$ 恒正，故 $s\ge 6$。
+
+端点检验：$a=b=3$ 时 $ab=9$，$a+b+3=9$，条件满足，两个端点同时取到。故 $ab\ge 9$，$a+b\ge 6$（$a=b=3$ 时取等）。
+
+\checkup 另取满足条件的 $a=5$：$5b=5+b+3$ 得 $b=2$，此时 $ab=10\ge 9$，$a+b=7\ge 6$。
+
+\insight{和与积纠缠时，用基本不等式把双变量压成单变量，因式分解解二次不等式（恒正的因式直接约去）。端点必须回代检验能否取到，这是「三相等」在此类问题中的形式。}
+\end{solution}
+
+\begin{solution}{题 16 · 解析（乘「1」法）}
+\think 条件 $\dfrac1x+\dfrac9y=1$ 本身就是「1」。用 $x+y$ 乘它，展开后常数与互倒对分别处理。与题 14 对照：一处「和为 1」乘给倒数和，一处「倒数和为 1」乘给和，方向相反、方法相同。
+
+\solve $x,y>0$：
+\[
+x+y=(x+y)\left(\frac1x+\frac9y\right)=1+9+\frac yx+\frac{9x}{y}\ge 10+2\sqrt{\frac yx\cdot\frac{9x}y}=10+6=16,
+\]
+当且仅当 $\dfrac yx=\dfrac{9x}y$，即 $y=3x$；代入条件 $\dfrac1x+\dfrac{9}{3x}=\dfrac4x=1$ 得 $x=4,\ y=12$。最小值 $16$。
+
+\checkup $x=4,y=12$：条件 $\dfrac14+\dfrac34=1$ 成立，$x+y=16$。
+
+\insight{条件即「1」时直接乘。展开后的固定流程：常数打底、互倒对给出 $2\sqrt{\cdot}$、取等条件回代条件解出具体位置，三步缺一不可。}
+\end{solution}
+
+\begin{solution}{题 17 \starred\starred\ · 解析（双换元）}
+\think 两个分母 $x+3y$、$x-y$ 都是 $x,y$ 的组合，配凑无从下手，于是设它们为新变量。换元后条件成为「和 $\le 4$」，不是等式；但目标为正、且随分母增大而减小，方向恰好相合。分离出 $\left(\dfrac2m+\dfrac1n\right)(m+n)$ 这一 0 次齐次部分（拓展 C 的视角），即可处理。
+
+\solve 设 $m=x+3y,\ n=x-y$。由 $x>y>0$ 得 $m>0,\ n>0$。反解：
+\[
+x=\frac{m+3n}{4},\qquad y=\frac{m-n}{4},\qquad x+y=\frac{m+n}{2}.
+\]
+条件 $x+y\le 2$ 即 $m+n\le 4$。于是
+\[
+\frac{2}{x+3y}+\frac{1}{x-y}=\frac2m+\frac1n=\frac{\left(\frac2m+\frac1n\right)(m+n)}{m+n}\ \ge\ \frac{\left(\frac2m+\frac1n\right)(m+n)}{4},
+\]
+（最后一步用了 $m+n\le 4$ 且分子为正。）而
+\[
+\left(\frac2m+\frac1n\right)(m+n)=2+1+\frac{2n}{m}+\frac{m}{n}\ge 3+2\sqrt2,
+\]
+故原式 $\ge\dfrac{3+2\sqrt2}{4}$。
+
+等号要求两处同时成立：$\dfrac{2n}m=\dfrac mn$（即 $m=\sqrt2\,n$）且 $m+n=4$。解得 $n=4(\sqrt2-1)$，$m=8-4\sqrt2$，回代：
+\[
+x=\frac{m+3n}{4}=2\sqrt2-1,\qquad y=\frac{m-n}{4}=3-2\sqrt2.
+\]
+验证范围：$x\approx1.83>y\approx0.17>0$，$x+y=2\le 2$，均满足。故最小值为 $\dfrac{3+2\sqrt2}{4}$。
+
+\checkup 代回原式：$x+3y=8-4\sqrt2$，$\dfrac{2}{8-4\sqrt2}=\dfrac{4+2\sqrt2}{8}$；$x-y=4\sqrt2-4$，$\dfrac{1}{4\sqrt2-4}=\dfrac{\sqrt2+1}{4}$。相加得 $\dfrac{6+4\sqrt2}{8}=\dfrac{3+2\sqrt2}{4}\approx1.457$，一致。
+
+\insight{分母是变量组合时，设分母为新变量。「和 $\le$ 定值」与「随分母增大而减小」的目标相配时同样可以取等，但等号出现在边界上，两处取等条件必须同时兑现。与题 16 对照：那里的「1」是现成的，这里的 $\frac{m+n}{4}\le 1$ 是自己构造的，并且带方向。}
+\end{solution}
+
+\clearpage
